@@ -14,7 +14,7 @@ def supers_list(request):
 
     if request.method == 'GET':
         heros = Super.objects.all()
-        serializer = SuperSerializer(supply, many=True)
+        serializer = SuperSerializer(heros, many=True)
         return Response(serializer.data)
     
     elif request.method == 'POST':
@@ -45,7 +45,7 @@ def supers_detail(request, pk):
         return Response(status=status.HTTP_204_NO_CONTENT)
     
 
-    
+
 
 
 
